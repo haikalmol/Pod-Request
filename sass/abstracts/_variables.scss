@@ -1,0 +1,23 @@
+// --Color
+$color-white: #fff;
+$color-body: #121725;
+$color-primary: #2c344b;
+$color-light-blue: #c2cbe5;
+$color-secondry-blue: #5a668a;
+$color-light-cyan: #54e6af;
+$color-input: $color-primary;
+$color-links: $color-light-cyan;
+$color-links-hover: #b3ffe2;
+// --Fonts
+$font-weights: (
+  "small": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+// breakboint
+$breakpoints: (
+  "small": 640px,
+  "medium": 768px,
+  "desktop": 1024px,
+) !default;

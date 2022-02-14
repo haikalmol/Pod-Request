@@ -1,0 +1,30 @@
+main {
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-body;
+    width: 92%;
+  }
+  @include respond-to(desktop) {
+    width: 61%;
+  }
+}
+
+.hero {
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+  &__title,
+  &__describe {
+    @include respond-to(mobile) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    span {
+      color: $color-white;
+      letter-spacing: -1px;
+    }
+  }
+}

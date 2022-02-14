@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  @include body-text;
+  background-color: $color-body;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  @include respond-to(desktop) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+body::before {
+  content: "";
+  @include background(url(../assets/mobile/image-host.jpg), cover, no-repeat);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  z-index: -1;
+  @include respond-to(tablet) {
+    background-image: url(../assets/tablet/image-host.jpg);
+    opacity: 1;
+    left: 37%;
+    bottom: 130px;
+  }
+  @include respond-to(desktop) {
+    background-image: url(../assets/desktop/image-host.jpg);
+    top: 130px;
+    bottom: 130px;
+  }
+}
+
+.container {
+  max-width: 327px;
+  // width: 87%;
+  margin: 0 auto;
+  @include respond-to(tablet) {
+    max-width: 690px;
+  }
+  @include respond-to(desktop) {
+    max-width: 1275px;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+p {
+  margin: 0;
+}

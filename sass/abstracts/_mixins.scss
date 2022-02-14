@@ -1,0 +1,45 @@
+@mixin body-text {
+  font: {
+    family: "Chivo", sans-serif;
+    size: 1.8rem;
+  }
+  line-height: 1.6;
+}
+$breakpoints: (
+  "small": 640px,
+  "medium": 768px,
+  "desktop": 1024px,
+) !default;
+
+@mixin background($image, $size, $repeat) {
+  background: {
+    image: $image;
+    size: $size;
+    repeat: $repeat;
+  }
+}
+
+// Define Breakpoints
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1280px;
+
+@mixin respond-to($media) {
+  @if $media == small-mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $media == mobile {
+    @media (min-width: $mobile) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}

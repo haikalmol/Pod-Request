@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  @include respond-to(mobile) {
+    img {
+      display: none;
+    }
+  }
+  @include respond-to(tablet) {
+    justify-content: flex-start;
+  }
+  @include respond-to(desktop) {
+    justify-content: end;
+    img {
+      position: relative;
+      bottom: 4em;
+      right: -5.5em;
+    }
+  }
+}

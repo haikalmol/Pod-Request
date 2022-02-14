@@ -1,0 +1,40 @@
+form {
+  position: relative;
+  font-weight: weight(regular);
+  width: 100%;
+  @include respond-to(tablet) {
+    width: 427px;
+    margin-top: 40px;
+  }
+
+  #email,
+  .btn-primary {
+    font-size: 1.4rem;
+  }
+  #email {
+    @extend .btn;
+    background-color: $color-input;
+    color: $color-white;
+    padding-left: 32px;
+    @include respond-to(tablet) {
+      height: 56px;
+    }
+  }
+  .btn-primary {
+    cursor: pointer;
+    background-color: $color-links;
+    &:hover {
+      background: $color-links-hover;
+    }
+  }
+  .error-msg {
+    color: red;
+    display: block;
+    width: 86%;
+    margin: 0 auto;
+    visibility: hidden;
+  }
+  .error-msg--show {
+    visibility: visible;
+  }
+}
